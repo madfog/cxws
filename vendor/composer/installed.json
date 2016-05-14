@@ -1,0 +1,52 @@
+[
+    {
+        "name": "pingplusplus/pingpp-php",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PingPlusPlus/pingpp-php.git",
+            "reference": "bea43f4a21a9b7ee6fe5eaa8e2f488c7c5d7fd66"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/PingPlusPlus/pingpp-php/zipball/bea43f4a21a9b7ee6fe5eaa8e2f488c7c5d7fd66",
+            "reference": "bea43f4a21a9b7ee6fe5eaa8e2f488c7c5d7fd66",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "ext-mbstring": "*",
+            "php": ">=5.3.3"
+        },
+        "time": "2016-03-15 07:47:59",
+        "type": "library",
+        "extra": {
+            "branch-alias": []
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Pingpp\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Pingplusplus and contributors",
+                "homepage": "https://github.com/PingPlusPlus/pingpp-php/contributors"
+            }
+        ],
+        "description": "Pingplusplus PHP Library",
+        "homepage": "https://pingxx.com/",
+        "keywords": [
+            "api",
+            "mobile payment processing",
+            "pingpp"
+        ]
+    }
+]

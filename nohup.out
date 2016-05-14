@@ -1,0 +1,11 @@
+2016-04-24T00:32:34.417092Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2016-04-24T00:32:34.419396Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2016-04-24T00:32:34.420346Z 0 [Note] mysqld (mysqld 5.7.11) starting as process 767 ...
+2016-04-24T00:32:34.427750Z 0 [Warning] Setting lower_case_table_names=2 because file system for /usr/local/var/mysql/ is case insensitive
+2016-04-24T00:32:34.427791Z 0 [ERROR] Fatal error: Please read "Security" section of the manual to find out how to run mysqld as root!
+
+2016-04-24T00:32:34.427818Z 0 [ERROR] Aborting
+
+2016-04-24T00:32:34.427829Z 0 [Note] Binlog end
+2016-04-24T00:32:34.428570Z 0 [Note] mysqld: Shutdown complete
+

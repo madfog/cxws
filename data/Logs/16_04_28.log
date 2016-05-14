@@ -1,0 +1,33 @@
+[ 2016-04-28T20:19:18+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=100
+ERR: 对支付渠道的请求未能成功。来自 wx_pub 渠道的错误信息：openid is invalid
+
+[ 2016-04-28T20:19:19+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=100
+ERR: 对支付渠道的请求未能成功。来自 wx_pub 渠道的错误信息：openid is invalid
+
+[ 2016-04-28T20:19:20+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=100
+ERR: 对支付渠道的请求未能成功。来自 wx_pub 渠道的错误信息：openid is invalid
+
+[ 2016-04-28T20:19:21+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=100
+ERR: 对支付渠道的请求未能成功。来自 wx_pub 渠道的错误信息：openid is invalid
+
+[ 2016-04-28T20:20:34+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=100
+ERR: 对支付渠道的请求未能成功。来自 wx_pub 渠道的错误信息：openid is invalid
+
+[ 2016-04-28T20:29:21+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=102
+ERR: 对支付渠道的请求未能成功。来自 wx_pub 渠道的错误信息：openid is invalid
+
+[ 2016-04-28T20:30:53+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=102
+ERR: 对支付渠道的请求未能成功。来自 wx_pub 渠道的错误信息：openid is invalid
+
+[ 2016-04-28T20:35:24+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=102
+ERR: 对支付渠道的请求未能成功。来自 wx_pub 渠道的错误信息：openid is invalid
+
+[ 2016-04-28T20:35:47+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=102
+ERR: 接收了未知的参数: openid
+
+[ 2016-04-28T20:36:08+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=102
+ERR: 对支付渠道的请求未能成功。来自 wx_pub 渠道的错误信息：openid is invalid
+
+[ 2016-04-28T21:11:54+08:00 ] 127.0.0.1 /index.php?m=cart&a=prepay&oid=102
+ERR: 对支付渠道的请求未能成功。来自 wx_pub 渠道的错误信息：openid is invalid
+
