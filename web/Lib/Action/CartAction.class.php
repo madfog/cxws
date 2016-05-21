@@ -105,7 +105,7 @@ class CartAction extends CommonAction {
 		var_dump( $user_id, $open_id );
 
 		$extra = array(
-			'open_id'   => $open_id,
+			'open_id'   => "omYnHvgG9RF2U5dTltm9j99kW8yU",
 			//'open_id'   => 'wx17be355134565af7',
 
 		);
