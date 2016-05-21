@@ -13,7 +13,7 @@ define('APP_NAME', 'web');
  */
 define('APP_PATH', './web/');
 
-require_once('vendor/autoload.php');
+require_once('../vendor/autoload.php');
 
 /**
  * 缓存目录设置
