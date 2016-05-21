@@ -151,13 +151,13 @@ class PublicAction extends CommonAction {
 
 		$reurl = urlencode($_SERVER['HTTP_REFERER']);
 		$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-		var_dump($ua, $reurl);
-		exit;
+
 		if(strpos($ua, "micromessenger") !== false) {
+			var_dump("wx");
 			$this->redirect(U('Public/Wx_login',"reurl=$reurl"));
 		}
 		else {
-
+			var_dump("normal");
 			if ($_SESSION['user_id']){
 				$this->redirect(U('Member/index',"reurl=$reurl"));
 			}
