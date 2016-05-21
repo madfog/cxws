@@ -110,7 +110,7 @@ class CartAction extends CommonAction {
 		$open_id = $wx_account && $wx_account['wx_open_id'];
 
 		$extra = array(
-			'open_id'   => $open_id;//"omYnHvgG9RF2U5dTltm9j99kW8yU",
+			'open_id'   => $open_id,//"omYnHvgG9RF2U5dTltm9j99kW8yU",
 			//'open_id'   => 'wx17be355134565af7',
 
 		);
