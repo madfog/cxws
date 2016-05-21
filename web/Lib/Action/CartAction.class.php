@@ -101,7 +101,7 @@ class CartAction extends CommonAction {
 
 
 		$extra = array(
-			'open_id'   => 'wx755a176a07f52614',
+			'open_id'   => 'wx17be355134565af7',
 
 		);
 		$charge = \Pingpp\Charge::create(array(
