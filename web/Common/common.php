@@ -691,8 +691,8 @@ function arr2str($arr)
 function gen_wx_info($code) {
     //https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code
 
-    $app_id = "wx755a176a07f52614";
-    $secrt = "385bb22c122ec25ae18b15a54c0de6f5";
+    $app_id = "wx17be355134565af7";
+    $secrt = "0547c647fb5f311fc38c40214aad9993";
     $auth_url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid={$app_id}&secret={$secrt}&code={$code}&grant_type=authorization_code";
     $auth_data = http($auth_url);
 
