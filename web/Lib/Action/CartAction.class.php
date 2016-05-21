@@ -101,11 +101,16 @@ class CartAction extends CommonAction {
 
 		// 获取当前用户的open_id
 		$user_id = $_SESSION['user_id'];//('user_id');
-		$open_id = $_SESSION["wx_open_id"];
-		var_dump( $user_id, $open_id );
+		$data = array('uid'=>$user_id);
+
+		$Account=M('Open_account');
+		//$data["wx_open_id"] = $openid;
+		$wx_account = $Account->where($data)->find();
+
+		$open_id = $wx_account && $wx_account['wx_open_id'];
 
 		$extra = array(
-			'open_id'   => "omYnHvgG9RF2U5dTltm9j99kW8yU",
+			'open_id'   => $open_id;//"omYnHvgG9RF2U5dTltm9j99kW8yU",
 			//'open_id'   => 'wx17be355134565af7',
 
 		);
