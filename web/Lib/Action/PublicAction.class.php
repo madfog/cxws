@@ -265,7 +265,7 @@ class PublicAction extends CommonAction {
 			$data["wx_open_id"] = $openid;
 			$wx_account = $Account->where($data)->find();
 
-			var_dump($wx_account);
+			$open_id = $wx_account["wx_open_id"];
 			//return;
 
 			if($wx_account) {
@@ -274,12 +274,14 @@ class PublicAction extends CommonAction {
 				cookie('nickname',null);
 				cookie('userpic',null);
 				session('user_id',null);
+				session('user_open_id',null);
 				$Member=D('Members');
 
 
 				$con['uid']=$wx_account['uid'];
+				$open_id = $wx_account["wx_open_id"];
 				$useruid = $Member->where($con)->field('uid,userpass,nickname,username,userstatus')->find();
-				var_dump($useruid, $con);
+
 
 				if($useruid['userstatus']==2){$this->error('禁止登录');}
 				else if(!$useruid){$this->error('用户不存在');}
@@ -290,6 +292,7 @@ class PublicAction extends CommonAction {
 						session('username',$useruid["username"]);
 						cookie('nickname',$useruid["nickname"]);
 						session('user_id',$useruid["uid"]);
+						session('user_open_id',$open_id);
 
 						$data = array(
 							'last_login_time' => time(),
@@ -315,6 +318,7 @@ class PublicAction extends CommonAction {
 				cookie('nickname',null);
 				cookie('userpic',null);
 				session('user_id',null);
+				session('user_open_id',null);
 				$Member=D('Members');
 				$map['username']=$wx_info['nickname'];
 				$map['userpass']=md5("");
@@ -355,6 +359,7 @@ class PublicAction extends CommonAction {
 					session('username',$useruid["username"]);
 					cookie('nickname',$useruid["nickname"]);
 					session('user_id',$useruid["uid"]);
+					session('user_open_id',$open_id);
 
 					$data = array(
 						'last_login_time' => time(),

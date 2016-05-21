@@ -99,15 +99,19 @@ class CartAction extends CommonAction {
 		// 获取订单星系
 		$amount = 1;
 
+		// 获取当前用户的open_id
+		$user_id = session('user_id');
 
 		$extra = array(
 			'open_id'   => 'wx17be355134565af7',
+			//'open_id'   => 'wx17be355134565af7',
 
 		);
 		$charge = \Pingpp\Charge::create(array(
 			'order_no'  => $oid,
 			'amount'    => $amount,
 			'app'       => array('id' => 'app_OqPOa5HSCK0KrTuX'),
+			//'app'       => array('id' => 'app_OCmzbHuHqn5Cv544'),
 			'channel'   => "wx_pub",
 			'currency'  => 'cny',
 			'client_ip' => $_SERVER['REMOTE_ADDR'],
