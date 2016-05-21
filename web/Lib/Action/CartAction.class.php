@@ -102,6 +102,7 @@ class CartAction extends CommonAction {
 		// 获取当前用户的open_id
 		$user_id = $_SESSION['user_id'];//('user_id');
 		$open_id = $_SESSION["wx_open_id"];
+		var_dump( $user_id, $open_id );
 
 		$extra = array(
 			'open_id'   => $open_id,
