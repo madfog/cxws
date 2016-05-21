@@ -100,8 +100,8 @@ class CartAction extends CommonAction {
 		$amount = 1;
 
 		// 获取当前用户的open_id
-		$user_id = session('user_id');
-		$open_id = session("wx_open_id");
+		$user_id = $_SESSION['user_id'];//('user_id');
+		$open_id = $_SESSION["wx_open_id"];
 
 		$extra = array(
 			'open_id'   => $open_id,

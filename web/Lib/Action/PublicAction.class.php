@@ -158,7 +158,6 @@ class PublicAction extends CommonAction {
 		}
 		else {
 
-			var_dump($_SESSION);
 			if ($_SESSION['user_id']){
 				$this->redirect(U('Member/index',"reurl=$reurl"));
 			}
