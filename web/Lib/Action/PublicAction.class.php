@@ -265,7 +265,7 @@ class PublicAction extends CommonAction {
 			$data["wx_open_id"] = $openid;
 			$wx_account = $Account->where($data)->find();
 
-			$open_id = $wx_account["wx_open_id"];
+			//$open_id = $wx_account["wx_open_id"];
 			//return;
 
 			if($wx_account) {
