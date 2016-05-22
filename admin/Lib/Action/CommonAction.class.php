@@ -10,6 +10,7 @@ class CommonAction extends Action {
 			$this->redirect(U('Public/login'));
 		}
 
+
 		$Articlecat=M('Article_cat');
 		$leftlist=$Articlecat->limit(4)->order('acid desc')->select();
 		$this->assign('leftlist',$leftlist);

@@ -250,8 +250,6 @@ class PublicAction extends CommonAction {
 
 
 	public function openauth() {
-		ini_set("display_errors","ON");
-		error_reporting(E_ALL);
 		$jumpurl = $_GET['jumpurl'];
 		$code = $_GET['code'];
 		// 获取openid
@@ -376,6 +374,10 @@ class PublicAction extends CommonAction {
 		}
 
 
+	}
+
+	public function hook() {
+		file_put_content("/tmp/test", print_r($_REQUEST,true), FILE_APPEND);
 	}
 
 }
