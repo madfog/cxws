@@ -379,7 +379,13 @@ class PublicAction extends CommonAction {
 	}
 
 	public function hook() {
-		file_put_contents("/tmp/test", print_r($_REQUEST,true), FILE_APPEND);
+
+
+		$raw_post_data = file_get_contents('php://input', 'r');
+
+		file_put_contents("/tmp/test", print_r($raw_post_data,true), FILE_APPEND);
+
+		echo json_encode(array('code'=>0, 'msg'=>"ok"));
 	}
 
 }
