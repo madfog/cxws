@@ -243,5 +243,9 @@ class CartAction extends CommonAction {
 	}
 		//生成订单后处理结束
 
+	public function success() {
+		$this->display();
+	}
+
 
 }
