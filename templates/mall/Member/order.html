@@ -158,12 +158,12 @@
 											<td>
 																					<switch name="vo.orderstatus" >
 <case value="0" >
-<a class="btn btn-default btn-xs" href="{:U('Member/detail/','id='.$vo['oid'])}" data-target="#ajax_target" data-trigger="ajax">查看</a>	
+<a class="btn btn-default btn-xs" href="{:U('Cart/cartpay/','id='.$vo['oid'])}" ><!--data-target="#ajax_target" data-trigger="ajax"-->查看</a>
 <a class="btn btn-default btn-xs" href="{:U('Member/reorder/','id='.$vo['oid'])}" >取消</a>	
 	</case>										
 
 <default />
-<a class="btn btn-default btn-xs" href="{:U('Member/detail/','id='.$vo['oid'])}" data-target="#ajax_target" data-trigger="ajax">查看</a>	
+<a class="btn btn-default btn-xs" href="{:U('Cart/cartpay/','id='.$vo['oid'])}" ><!--data-target="#ajax_target" data-trigger="ajax"-->查看</a>
 										
 </switch>
 
