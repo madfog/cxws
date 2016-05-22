@@ -385,7 +385,55 @@ class PublicAction extends CommonAction {
 
 		file_put_contents("/tmp/test", print_r($raw_post_data,true), FILE_APPEND);
 
+		$event = json_decode($raw_post_data, true);
+
+		$headers = \Pingpp\Util\Util::getRequestHeaders();
+		// 签名在头部信息的 x-pingplusplus-signature 字段
+		$signature = isset($headers['X-Pingplusplus-Signature']) ? $headers['X-Pingplusplus-Signature'] : NULL;
+
+		// 请从 https://dashboard.pingxx.com 获取「Ping++ 公钥」
+		$pub_key_path = APP_PATH.'/inc/pingpp/pingpp_rsa_public_key.pem';
+		// $pub_key_path = __DIR__ . "/pingpp_rsa_public_key.pem";
+
+		$result = $this->verify_signature($raw_post_data, $signature, $pub_key_path);
+
+
+		if ($result === 1) {
+
+			//y验证通过
+
+
+		} elseif ($result === 0) {
+			http_response_code(400);
+			echo 'verification failed1';
+			exit;
+		} else {
+			http_response_code(400);
+			echo 'verification error2';
+			exit;
+		}
+
+		if ($event['type'] == 'charge.succeeded') {
+			$charge = $event['data']['object'];
+			//支付成功之后的操作
+			$chargeid = $charge['id'];//chargeid
+			$order_no = $charge['order_no'];//订单号
+			$subject = $charge['body'];//支付产品
+			$channel = $charge['channel'];//支付渠道
+
+			$Order=M('Foodorder');
+			$condition['oid'] = $order_no;
+			$data['ispay'] = 1;
+			$Order->where($condition)->save($data);
+		}
+
+
 		echo json_encode(array('code'=>0, 'msg'=>"ok"));
 	}
 
+	private function verify_signature($raw_data, $signature, $pub_key_path) {
+		$pub_key_contents = file_get_contents($pub_key_path);
+		// php 5.4.8 以上，第四个参数可用常量 OPENSSL_ALGO_SHA256
+		return openssl_verify($raw_data, base64_decode($signature), $pub_key_contents, 'sha256');
+	}
 }
