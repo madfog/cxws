@@ -369,11 +369,13 @@ class PublicAction extends CommonAction {
 					//header("location:".$jumpurl);
 					$this->redirect(U('Member/index'));
 				}
+				$this->redirect(U('Member/index'));
 			}
 			// 跳转
+			$this->redirect(U('Member/index'));
 		}
 
-
+		$this->redirect(U('Member/index'));
 	}
 
 	public function hook() {
