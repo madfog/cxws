@@ -379,7 +379,7 @@ class PublicAction extends CommonAction {
 	}
 
 	public function hook() {
-		file_put_content("/tmp/test", print_r($_REQUEST,true), FILE_APPEND);
+		file_put_contents("/tmp/test", print_r($_REQUEST,true), FILE_APPEND);
 	}
 
 }
