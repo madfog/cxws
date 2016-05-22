@@ -240,7 +240,7 @@ class PublicAction extends CommonAction {
 		$appid = "wx17be355134565af7";
 		$app_sec = "0547c647fb5f311fc38c40214aad9993";
 
-		$jumpurl = urlencode("http://cx.ritabob.com/index.php?m=public&a=openauth&jumpurl=$reurl");
+		$jumpurl = urlencode("http://cx.iheima.cn/index.php?m=public&a=openauth&jumpurl=$reurl");
 		// 构造跳转链接
 		$url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid={$appid}&redirect_uri={$jumpurl}&response_type=code&scope=snsapi_userinfo";
 
