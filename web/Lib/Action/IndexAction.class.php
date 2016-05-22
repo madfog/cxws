@@ -6,7 +6,9 @@ class IndexAction extends CommonAction {
 
     public function index(){
 		//var_dump($_SERVER);
-	
+		if (!$_SESSION['user_id']){
+			$this->redirect(U('Public/login'));
+		}
       $Food=M('Food');
 	  $foodlist=$Food->limit(15)->order('fid desc')->where('status=0')->select();
 	  $this->assign('foodlist',$foodlist);
@@ -28,6 +30,9 @@ class IndexAction extends CommonAction {
    
 	
 	 public function flist(){
+		 if (!$_SESSION['user_id']){
+			 $this->redirect(U('Public/login'));
+		 }
 	 $data['fcid']=I('id');//店铺分类
 	 $data['status']='0';
     $Foods=D('Foodcat');		
@@ -54,6 +59,9 @@ class IndexAction extends CommonAction {
    }
    //菜品详情页展示
 	public function show(){
+		if (!$_SESSION['user_id']){
+			$this->redirect(U('Public/login'));
+		}
 	 $data['fid']=I('id');//店铺分类
    
 	

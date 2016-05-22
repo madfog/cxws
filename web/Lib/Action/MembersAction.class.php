@@ -7,8 +7,10 @@ class MembersAction extends CommonAction {
   //会员中心页
    
     public function index(){
-	
- 
+
+        if (!$_SESSION['user_id']){
+            $this->redirect(U('Public/login'));
+        }
         $this->display();
    }
    
@@ -17,8 +19,10 @@ class MembersAction extends CommonAction {
    //订单查询页
    
     public function search(){
-	
- 
+
+        if (!$_SESSION['user_id']){
+            $this->redirect(U('Public/login'));
+        }
         $this->display();
    }
    
@@ -31,6 +35,9 @@ class MembersAction extends CommonAction {
 
 	
     public function myorders(){
+        if (!$_SESSION['user_id']){
+            $this->redirect(U('Public/login'));
+        }
 		 $otel=I('id');
 		 session('otel',$otel);
 		 $pid=I('pid');
@@ -90,7 +97,9 @@ class MembersAction extends CommonAction {
 	//我的订单列表查看
 	
 	    public function myorder(){
-		
+            if (!$_SESSION['user_id']){
+                $this->redirect(U('Public/login'));
+            }
          $Orders=M('Foodorder');// 实例化User对象
         import('ORG.Util.Page');// 导入分页类
 		
