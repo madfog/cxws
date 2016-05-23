@@ -81,6 +81,7 @@ class CartAction extends CommonAction {
 			$this->assign('payname',C('payname'));//支付宝帐户
 			$this->assign('pid',$pid);
 
+			var_dump($oitem);
 			$this->display ();
 
 		}
