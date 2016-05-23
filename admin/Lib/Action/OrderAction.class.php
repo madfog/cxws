@@ -42,6 +42,7 @@ class OrderAction extends CommonAction {
 			 $endtime = strtotime($timestr." 7:00:00");
 			 $data['order_ctime'] = array('GT',$starttime);
 			 $data['order_ctime'] = array('LT',$endtime);
+			 var_dump($data);
 		 }
 		 else if(intval($_GET['time_filter']) == 2) {		// 下午订单
 			 $timestr = date("Y-m-d",time());
