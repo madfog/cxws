@@ -28,8 +28,39 @@ class OrderAction extends CommonAction {
         $Page       = new Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
         $show       = $Page->show();// 分页显示输出
           // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
-		 $data['orderstatus']=I('id');
-        $orderlist= $Order->where($data)->limit($Page->firstRow.','.$Page->listRows)->order('oid desc')->select();
+
+		 $data = [];
+		 if(isset($_GET['id'])) {
+			 $data['orderstatus']=I('id');
+		 }
+
+
+		 if(intval($_GET['time_filter']) == 1) {		// 上午订单
+			$timestr = date("Y-m-d",time());
+			 $timestr1 = date("Y-m-d",strtotime("-1 day"));
+			 $starttime = strtotime($timestr1." 19:00:00");
+			 $endtime = strtotime($timestr." 7:00:00");
+			 $data['order_ctime'] = array('GT',$starttime);
+			 $data['order_ctime'] = array('LT',$endtime);
+		 }
+		 else if(intval($_GET['time_filter']) == 2) {		// 下午订单
+			 $timestr = date("Y-m-d",time());
+			 $timestr1 = date("Y-m-d",strtotime("-1 day"));
+			 $starttime = strtotime($timestr." 7:00:01");
+			 $endtime = strtotime($timestr." 11:00:00");
+			 $data['order_ctime'] = array('GT',$starttime);
+			 $data['order_ctime'] = array('LT',$endtime);
+
+		 }
+		 else if(intval($_GET['time_filter']) == 3) {		// 下午订单
+			 $timestr = date("Y-m-d",time());
+			 $timestr1 = date("Y-m-d",strtotime("-1 day"));
+			 $starttime = strtotime($timestr." 11:00:01");
+			 $endtime = strtotime($timestr." 18:30:00");
+			 $data['order_ctime'] = array('GT',$starttime);
+			 $data['order_ctime'] = array('LT',$endtime);
+		 }
+         $orderlist= $Order->where($data)->limit($Page->firstRow.','.$Page->listRows)->order('oid desc')->select();
 		$this->assign('page',$show);// 赋值分页输出
 		
 		$this->assign('orderlist',$orderlist);
