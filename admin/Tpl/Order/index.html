@@ -249,6 +249,12 @@
 </span>										
 											</td>
 											<td>
+												<switch name="vo.ispay" >
+													<case value="0" >未付款</case>
+													<case value="1" >已支付</case>
+												</switch>
+											</td>>
+											<td>
 											
 										<a class="btn btn-default btn-xs" href="{:U('Order/detail/','id='.$vo['oid'])}" data-toggle="modal" data-target="#myModal"> 查看</a>
 																				<switch name="vo.orderstatus" >
