@@ -169,10 +169,10 @@
 		 
   <ul class="nav nav-tabs " >
 		  <li <?php if(!isset($_GET['id'])) { ?>class="active"<?php }?>><a href="{:U('Order/index/')}" ><b>全部订单</b></a></li>
-              <li <?php if(!isset($_GET['id']) && $_GET['id']==0) { ?>class="active"<?php }?>><a href="{:U('Order/index/','id=0')}" ><b>最新提交</b></a></li>
-             <li <?php if(!isset($_GET['id']) && $_GET['id']==1) { ?>class="active"<?php }?>><a href="{:U('Order/index/','id=1')}" ><b>已确认</b></a></li>
-            <li <?php if(!isset($_GET['id'])&& $_GET['id']==2) { ?>class="active"<?php }?>><a href="{:U('Order/index/','id=3')}" ><b>配送中</b></a></li>
-             <li <?php if(!isset($_GET['id'])&& $_GET['id']==3) { ?>class="active"<?php }?>><a href="{:U('Order/index/','id=4')}" ><b>已完成</b></a></li>
+              <li <?php if(isset($_GET['id']) && $_GET['id']==0) { ?>class="active"<?php }?>><a href="{:U('Order/index/','id=0')}" ><b>最新提交</b></a></li>
+             <li <?php if(isset($_GET['id']) && $_GET['id']==1) { ?>class="active"<?php }?>><a href="{:U('Order/index/','id=1')}" ><b>已确认</b></a></li>
+            <li <?php if(isset($_GET['id'])&& $_GET['id']==2) { ?>class="active"<?php }?>><a href="{:U('Order/index/','id=3')}" ><b>配送中</b></a></li>
+             <li <?php if(isset($_GET['id'])&& $_GET['id']==3) { ?>class="active"<?php }?>><a href="{:U('Order/index/','id=4')}" ><b>已完成</b></a></li>
                
               
           </ul>
