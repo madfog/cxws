@@ -40,17 +40,17 @@ class OrderAction extends CommonAction {
 			 $timestr1 = date("Y-m-d",strtotime("-1 day"));
 			 $starttime = strtotime($timestr1." 19:00:00");
 			 $endtime = strtotime($timestr." 7:00:00");
-			 $data['order_ctime'] = array('GT',$starttime);
-			 $data['order_ctime'] = array('LT',$endtime);
-			 var_dump($data);
+			 $data['order_ctime'] = [array('GT',$starttime),array('LT',$endtime)];
+			 //$data['order_ctime'] = array('LT',$endtime);
+			 //var_dump($data);
 		 }
 		 else if(intval($_GET['time_filter']) == 2) {		// 下午订单
 			 $timestr = date("Y-m-d",time());
 			 $timestr1 = date("Y-m-d",strtotime("-1 day"));
 			 $starttime = strtotime($timestr." 7:00:01");
 			 $endtime = strtotime($timestr." 11:00:00");
-			 $data['order_ctime'] = array('GT',$starttime);
-			 $data['order_ctime'] = array('LT',$endtime);
+			 $data['order_ctime'] = [array('GT',$starttime),array('LT',$endtime)];
+			 //$data['order_ctime'] = array('LT',$endtime);
 
 		 }
 		 else if(intval($_GET['time_filter']) == 3) {		// 下午订单
@@ -58,8 +58,8 @@ class OrderAction extends CommonAction {
 			 $timestr1 = date("Y-m-d",strtotime("-1 day"));
 			 $starttime = strtotime($timestr." 11:00:01");
 			 $endtime = strtotime($timestr." 18:30:00");
-			 $data['order_ctime'] = array('GT',$starttime);
-			 $data['order_ctime'] = array('LT',$endtime);
+			 $data['order_ctime'] = [array('GT',$starttime),array('LT',$endtime)];
+			 //$data['order_ctime'] = array('LT',$endtime);
 		 }
          $orderlist= $Order->where($data)->limit($Page->firstRow.','.$Page->listRows)->order('oid desc')->select();
 		$this->assign('page',$show);// 赋值分页输出
