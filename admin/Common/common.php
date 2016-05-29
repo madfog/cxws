@@ -9,6 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+
+use EasyWeChat\Foundation\Application;
+
 /**
  * Think扩展函数库 需要手动加载后调用或者放入项目函数库
  * @category   Extend
@@ -588,3 +591,31 @@ function think_send_mail($to, $name, $subject = '', $body = '', $attachment = nu
     return $mail->Send() ? true : $mail->ErrorInfo;
 }
 
+
+
+function sendMsgTo() {
+    $options = [
+        'debug'     => true,
+        'app_id'    => 'wx17be355134565af7',
+        'secret'    => '0547c647fb5f311fc38c40214aad9993',
+        'token'     => 'easywechat',
+        'log' => [
+            'level' => 'debug',
+            'file'  => '/tmp/easywechat.log',
+        ],
+        // ...
+    ];
+
+    $app = new Application($options);
+
+    $server = $app->server;
+    $user = $app->user;
+
+    $server->setMessageHandler(function($message) use ($user) {
+        $fromUser = $user->get($message->FromUserName);
+
+        return "{$fromUser->nickname} 您好！欢迎关注 overtrue!";
+    });
+
+    $server->serve()->send();
+}

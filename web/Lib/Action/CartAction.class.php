@@ -96,8 +96,21 @@ class CartAction extends CommonAction {
 		$app_id = "sk_live_5mr1S0jPmjv9yH4m1S8OO8C4";
 		\Pingpp\Pingpp::setApiKey($app_id);
 
-		// 获取订单星系
-		$amount = 1;
+		// 获取订单消息
+		$data['oid']=$oid;
+		$Order=D('Foodorder');
+		$oitem=$Order->relation(true)->where($data)->find();
+
+		if($oitem.orderprice) {
+			$amount = intval($oitem.orderprice*100);
+		}
+		else {
+			$ret = array("code"=>-1,  "msg"=>"订单不存在");
+
+			echo json_encode($ret);
+			return 0;
+		}
+
 
 		// 获取当前用户的open_id
 		$user_id = $_SESSION['user_id'];//('user_id');
