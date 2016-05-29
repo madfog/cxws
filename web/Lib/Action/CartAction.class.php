@@ -101,8 +101,8 @@ class CartAction extends CommonAction {
 		$Order=D('Foodorder');
 		$oitem=$Order->relation(true)->where($data)->find();
 
-		if($oitem.orderprice) {
-			$amount = intval($oitem.orderprice*100);
+		if($oitem['orderprice']) {
+			$amount = intval($oitem['orderprice']*100);
 		}
 		else {
 			$ret = array("code"=>-1,  "msg"=>"订单不存在");
