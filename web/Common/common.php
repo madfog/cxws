@@ -720,3 +720,39 @@ function gen_wx_info($code) {
 
     return $auth_data;
 }
+
+
+function sendMsg($toUserId, $msg) {
+    $toUserId="omYnHvgG9RF2U5dTltm9j99kW8yU";
+    $options = [
+        'debug'     => true,
+        'app_id'    => 'wx17be355134565af7',
+        'secret'    => '0547c647fb5f311fc38c40214aad9993',
+        'token'     => 'easywechat',
+        'log' => [
+            'level' => 'debug',
+            'file'  => '/tmp/easywechat.log',
+        ],
+        // ...
+    ];
+    $app = new EasyWeChat\Foundation\Application($options);
+    $server = $app->server;
+    $user = $app->user;
+
+
+    $text = new EasyWeChat\Message\Text(['content' => $msg]);
+
+// or
+    //$text = new EasyWeChat\Message\Text();
+   // $text->content = '您好！overtrue。';
+
+// or
+    //$text = new EasyWeChat\Message\Text();
+    //$text->setAttribute('content', '您好！overtrue。');
+
+    $result = $app->staff->message($text)->to($toUserId)->send();
+
+    var_dump($result);
+
+    return $result;
+}
